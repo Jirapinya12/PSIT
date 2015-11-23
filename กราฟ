@@ -1,0 +1,31 @@
+#!/usr/bin/python
+
+import pylab
+year = [2516, 2519, 2521, 2525, 2528, 2531, 2532, 2534, 2536, 2538, 2541, 2543, 2547, 2548, 2549, 2551, 2556, 2557]
+north = [66.96, 60.32, 56.96, 51.73, 49.59, 47.39, 47.29, 45.47, 44.35, 43.55, 43.06, 56.75, 54.24, 47.31, 52.09, 56.04, 52.36, 52.60]
+#year = [2516, 2521, 2525, 2531, 2536, 2541, 2547, 2551, 2557]
+#north = [66.96, 55.96, 51.73, 47.39, 44.35, 43.06, 54.27, 56.04, 52.60]
+
+north_east = [30.01, 24.57, 18.49, 15.33, 15.15, 14.03, 13.97, 12.91, 12.72, 12.59, 12.43, 15.71, 16.64, 15.00, 14.54, 16.32, 15.09, 15.02]
+east = [41.19, 34.6, 30.24, 21.92, 21.89, 21.46, 21.33, 21.07, 20.29, 20.8, 20.57, 23.12, 22.57, 21.74, 21.6, 21.01, 22.45, 22.18]
+central = [35.56, 32.38, 30.31, 27.47, 26.24, 25.59, 25.55, 24.65, 24.34, 24.17, 23.81, 31.84, 31.52, 30.68, 30.5, 29.81, 32.79, 32.86]
+south = [26.07, 28.48, 24.89, 23.25, 21.9, 20.19, 20.65, 19.02, 18.11, 17.61, 17.15, 24.62, 25.37, 24.99, 24.46, 27.03, 23.95, 23.97]
+
+#ploat graph
+pylab.plot(year, north,'-bo',linewidth=3)
+pylab.plot(year, north_east,'-mo',linewidth=2)
+pylab.plot(year, east,'-go',linewidth=2)
+pylab.plot(year, central,'-yo',linewidth=2)
+pylab.plot(year, south,'-ro',linewidth=2)
+
+labelProperty = dict(fontweight='bold',fontsize='12')
+pylab.xlabel('Year', labelProperty)
+pylab.ylabel('Percent', labelProperty)
+legends = ('North', 'North_east', 'East', 'Central', 'south')
+     
+pylab.legend(legends, loc='upper right', shadow=True, fancybox=True)
+
+pylab.xticks(year)
+pylab.grid(True)
+ 
+pylab.show()
