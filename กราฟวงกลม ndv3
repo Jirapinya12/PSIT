@@ -1,0 +1,54 @@
+import codecs
+from nvd3 import pieChart
+type = 'pieChart'
+
+#data
+year = [2516, 2519, 2521, 2525, 2528, 2531, 2532, 2534, 2536, 2538, 2541, 2543, 2547, 2548, 2549, 2551, 2556, 2557]
+north = [66.96, 60.32, 56.96, 51.73, 49.59, 47.39, 47.29, 45.47, 44.35, 43.55, 43.06, 56.75, 54.24, 47.31, 52.09, 56.04, 52.36, 52.60]
+north_east = [30.01, 24.57, 18.49, 15.33, 15.15, 14.03, 13.97, 12.91, 12.72, 12.59, 12.43, 15.71, 16.64, 15.00, 14.54, 16.32, 15.09, 15.02]
+east = [41.19, 34.6, 30.24, 21.92, 21.89, 21.46, 21.33, 21.07, 20.29, 20.8, 20.57, 23.12, 22.57, 21.74, 21.6, 21.01, 22.45, 22.18]
+central = [35.56, 32.38, 30.31, 27.47, 26.24, 25.59, 25.55, 24.65, 24.34, 24.17, 23.81, 31.84, 31.52, 30.68, 30.5, 29.81, 32.79, 32.86]
+south = [26.07, 28.48, 24.89, 23.25, 21.9, 20.19, 20.65, 19.02, 18.11, 17.61, 17.15, 24.62, 25.37, 24.99, 24.46, 27.03, 23.95, 23.97]
+
+extra_serie = {"tooltip": {"y_start": "", "y_end": " percent"}}
+
+#ภาคเหนือ
+chart_north = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
+chart_north.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
+chart_north.buildhtml()
+file = open("chart_north.html", "w")
+file.write(chart_north.htmlcontent)
+file.close()
+
+#ภาคตะวันออกเฉียงเหนือ
+chart_north_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
+chart_north_east.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
+chart_north_east.buildhtml()
+file = open("chart_north_east.html", "w")
+file.write(chart_north_east.htmlcontent)
+file.close()
+
+#ภาคตะวันออก
+chart_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออก
+chart_east.add_serie(y=east, x=year, extra=extra_serie)#---ใส่ค่า
+chart_east.buildhtml()
+file = open("chart_east.html", "w")
+file.write(chart_east.htmlcontent)
+file.close()
+
+#ภาคกลาง
+chart_central = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
+chart_central.add_serie(y=central, x=year, extra=extra_serie)#---ใส่ค่า
+chart_central.buildhtml()
+file = open("chart_central.html", "w")
+file.write(chart_central.htmlcontent)
+file.close()
+
+#ภาคใต้
+chart_south = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคใต้
+chart_south.add_serie(y=south, x=year, extra=extra_serie)#---ใส่ค่า
+chart_south.buildhtml()
+file = open("chart_south.html", "w")
+file.write(chart_south.htmlcontent)
+file.close()
+
