@@ -52,3 +52,30 @@ south = open("chart_south.html", "w")
 south.write(chart_south.htmlcontent)
 south.close()
 
+#index
+##linksouth = "<a href='"+south+"'><font size=20><div align=center>"+"South"+"</div></font></a><br>"
+_ = " "
+_1 = " "
+##linkcentral = "<a href='"+central+"'><font size=20>"+"Central"+"</font></a><br>"
+##linkeast = "<a href='"+east+"'><font size=20>"+"East"+"</font></a><br>"
+##linknorth_east = "<a href='"+north_east+"'><font size=20>"+"North east"+"</font></a><br>"
+##linknorth = "<a href='"+north+"'><font size=20>"+"North"+"</font></a><br>"
+
+
+
+index = codecs.open("index.html","w")
+htmlhomename ="<head><title>Project</title></head>"
+head = "<body background=https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xfp1/v/t35.0-12/12314991_1075908655761654_1350428994_o.jpg?oh=a5db469f02f44407d4072cd2a62c75d5&oe=566297F3&__gda__=1449237789_a24f0675619a244e3dc9c2d1b0392c82><b><div align=center><font size=10><u>Results  of the survey population is disabled</u></font></div></b></body><br>"
+buttonsouth = "<body><div align=center><input type=button onclick=window.location.href='chart_south.html' value=South></div></body>"
+buttoncentral = "<body><div align=center><input type=button onclick=window.location.href='chart_central.html' value=Central></div></body>"
+buttoneast = "<body><div align=center><input type=button onclick=window.location.href='chart_east.html' value=East></div></body>"
+buttonnorth_east = "<body><div align=center><input type=button onclick=window.location.href='chart_north_east.html' value='North East'></div></body>"
+buttonnorth = "<body><div align=center><input type=button onclick=window.location.href='chart_north.html' value=North></div></body>"
+index.write(htmlhomename)
+index.write(head)
+index.write(buttonsouth)
+index.write(buttoncentral)
+index.write(buttoneast)
+index.write(buttonnorth_east)
+index.write(buttonnorth)
+index.close()
