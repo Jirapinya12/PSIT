@@ -53,19 +53,29 @@ south.write(chart_south.htmlcontent)
 south.close()
 
 #----------------------------------index
-##linksouth = "<a href='"+south+"'><font size=20><div align=center>"+"South"+"</div></font></a><br>"
+linksouth = "<a href=chart_south.html><font size=5><div align=center>"+"South"+"</div></font></a>"
 _ = " "
 _1 = " "
-##linkcentral = "<a href='"+central+"'><font size=20>"+"Central"+"</font></a><br>"
-##linkeast = "<a href='"+east+"'><font size=20>"+"East"+"</font></a><br>"
-##linknorth_east = "<a href='"+north_east+"'><font size=20>"+"North east"+"</font></a><br>"
-##linknorth = "<a href='"+north+"'><font size=20>"+"North"+"</font></a><br>"
+linkcentral = "<a href=central><font size=20>"+"Central"+"</font></a>"
+linkeast = "<a href=east><font size=20>"+"East"+"</font></a>"
+linknorth_east = "<a href=north_east><font size=20>"+"North east"+"</font></a>"
+linknorth = "<a href=north><font size=20>"+"North"+"</font></a>"
 
 index = open("index.html","w")
 htmlhomename ="<head><title>Project</title></head>"
-head = "<body background=https://scontent.fbkk2-1.fna.fbcdn.net/hphotos-xaf1/v/t35.0-12/12334520_1075913725761147_1308440815_o.jpg?oh=a95124d10929a7f4c2abee57ac203210&oe=5661A28F>\
-<b><div align=center><font size=10><u>forest</u></font></div></b></body><br>"
-twocolumn = "<body><center><table style='width:730px; height:ความสูงpx' cellspacing=7 cellpadding=0 width=730 border=0>\
+bghead = "<head>\
+<style type='text/css'>\
+<!--\
+BODY{\
+background-image: url('head1.jpg');\
+background-repeat: no-repeat;\
+background-position: top;\
+}\
+</style>\
+</head>"
+twocolumn = "<body>\
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>\
+<div align=center><table style='width:730px; height:ความสูงpx' cellspacing=7 cellpadding=0 width=730 border=0>\
     <tbody>\
         <tr style=text-align: left>\
             <td valign=top><font color='#402418'><font color='#000000'>\
@@ -79,7 +89,7 @@ twocolumn = "<body><center><table style='width:730px; height:ความสู�
             </dt></td>\
         </tr>\
     </tbody>\
-</table></center>\
+</table></div>\
 </body>"
 buttonsouth = "<body><div align=center><input type=button onclick=window.location.href='chart_south.html' value=South></div></body>"
 buttoncentral = "<body><div align=center><input type=button onclick=window.location.href='chart_central.html' value=Central></div></body>"
@@ -87,11 +97,12 @@ buttoneast = "<body><div align=center><input type=button onclick=window.location
 buttonnorth_east = "<body><div align=center><input type=button onclick=window.location.href='chart_north_east.html' value='North East'></div></body>"
 buttonnorth = "<body><div align=center><input type=button onclick=window.location.href='chart_north.html' value=North></div></body>"
 index.write(htmlhomename)
-index.write(head)
+index.write(bghead)
 index.write(twocolumn)
-index.write(buttonsouth)
+index.write(linksouth)
 index.write(buttoncentral)
 index.write(buttoneast)
 index.write(buttonnorth_east)
 index.write(buttonnorth)
 index.close()
+
