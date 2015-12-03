@@ -16,39 +16,39 @@ extra_serie = {"tooltip": {"y_start": "", "y_end": " percent"}}
 chart_north = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
 chart_north.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north.buildhtml()
-file = open("chart_north.html", "w")
-file.write(chart_north.htmlcontent)
-file.close()
+north = open("chart_north.html", "w")
+north.write(chart_north.htmlcontent)
+north.close()
 
 #ภาคตะวันออกเฉียงเหนือ
 chart_north_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
 chart_north_east.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north_east.buildhtml()
-file = open("chart_north_east.html", "w")
-file.write(chart_north_east.htmlcontent)
-file.close()
+north_east = open("chart_north_east.html", "w")
+north_east.write(chart_north_east.htmlcontent)
+north_east.close()
 
 #ภาคตะวันออก
 chart_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออก
 chart_east.add_serie(y=east, x=year, extra=extra_serie)#---ใส่ค่า
 chart_east.buildhtml()
-file = open("chart_east.html", "w")
-file.write(chart_east.htmlcontent)
-file.close()
+east = open("chart_east.html", "w")
+east.write(chart_east.htmlcontent)
+east.close()
 
 #ภาคกลาง
 chart_central = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
 chart_central.add_serie(y=central, x=year, extra=extra_serie)#---ใส่ค่า
 chart_central.buildhtml()
-file = open("chart_central.html", "w")
-file.write(chart_central.htmlcontent)
-file.close()
+central = open("chart_central.html", "w")
+central.write(chart_central.htmlcontent)
+central.close()
 
 #ภาคใต้
 chart_south = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคใต้
 chart_south.add_serie(y=south, x=year, extra=extra_serie)#---ใส่ค่า
 chart_south.buildhtml()
-file = open("chart_south.html", "w")
-file.write(chart_south.htmlcontent)
-file.close()
+south = open("chart_south.html", "w")
+south.write(chart_south.htmlcontent)
+south.close()
 
