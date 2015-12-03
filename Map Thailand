@@ -1,0 +1,5 @@
+import folium
+from PIL import Image
+map_osm = folium.Map(location=[15.0000, 100.0000], zoom_start=6) # [ละติจูด,ลองติดจูด] และการซูมลำดับ 5
+map_osm.simple_marker([15.60, 100.2], popup='ภาคกลาง มีพื้นที่') #ระบบพิกัดตำแหน่ง
+map_osm.create_map(path='thailandmap.html')
