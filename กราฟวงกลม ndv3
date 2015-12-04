@@ -1,5 +1,6 @@
 import codecs
 from nvd3 import pieChart
+
 type = 'pieChart'
 
 #data
@@ -11,6 +12,8 @@ central = [35.56, 32.38, 30.31, 27.47, 26.24, 25.59, 25.55, 24.65, 24.34, 24.17,
 south = [26.07, 28.48, 24.89, 23.25, 21.9, 20.19, 20.65, 19.02, 18.11, 17.61, 17.15, 24.62, 25.37, 24.99, 24.46, 27.03, 23.95, 23.97]
 
 extra_serie = {"tooltip": {"y_start": "", "y_end": " percent"}}
+
+#_____________________________________________________________________PieChart________________________________________________________________________#
 
 #ภาคเหนือ
 chart_north = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
@@ -52,7 +55,34 @@ south = open("chart_south.html", "w")
 south.write(chart_south.htmlcontent)
 south.close()
 
-#----------------------------------index
+#_______________________________________________________________stackedAreaChart_____________________________________________________________________#
+
+from nvd3 import stackedAreaChart
+
+#data
+year = [2516, 2519, 2521, 2525, 2528, 2531, 2532, 2534, 2536, 2538, 2541, 2543, 2547, 2548, 2549, 2551, 2556, 2557]
+north = [66.96, 60.32, 56.96, 51.73, 49.59, 47.39, 47.29, 45.47, 44.35, 43.55, 43.06, 56.75, 54.24, 47.31, 52.09, 56.04, 52.36, 52.60]
+north_east = [30.01, 24.57, 18.49, 15.33, 15.15, 14.03, 13.97, 12.91, 12.72, 12.59, 12.43, 15.71, 16.64, 15.00, 14.54, 16.32, 15.09, 15.02]
+east = [41.19, 34.6, 30.24, 21.92, 21.89, 21.46, 21.33, 21.07, 20.29, 20.8, 20.57, 23.12, 22.57, 21.74, 21.6, 21.01, 22.45, 22.18]
+central = [35.56, 32.38, 30.31, 27.47, 26.24, 25.59, 25.55, 24.65, 24.34, 24.17, 23.81, 31.84, 31.52, 30.68, 30.5, 29.81, 32.79, 32.86]
+south = [26.07, 28.48, 24.89, 23.25, 21.9, 20.19, 20.65, 19.02, 18.11, 17.61, 17.15, 24.62, 25.37, 24.99, 24.46, 27.03, 23.95, 23.97]
+
+extra_serie = {"tooltip": {"y_start": "", "y_end": " percent"}}
+
+stackedareachart = stackedAreaChart(name='stackedAreaChart', height=400, width=800)
+stackedareachart.add_serie(name="East", y=east, x=year, extra=extra_serie)
+stackedareachart.add_serie(name="Central", y=central, x=year, extra=extra_serie)
+stackedareachart.add_serie(name="South", y=south, x=year, extra=extra_serie)
+stackedareachart.add_serie(name="North East", y=north_east, x=year, extra=extra_serie)
+stackedareachart.add_serie(name="North", y=north, x=year, extra=extra_serie)
+
+stackedareachart.buildhtml()
+a = open("StackedAreaChart.html", "w")
+a.write(stackedareachart.htmlcontent)
+a.close()
+
+#______________________________________________________________________Index_________________________________________________________________________#
+
 linksouth = "<a href=chart_south.html><font size=5><div align=center>"+"South"+"</div></font></a>"
 _ = " "
 _1 = " "
@@ -95,7 +125,7 @@ buttonsouth = "<body><div align=center><input type=button onclick=window.locatio
 buttoncentral = "<body><div align=center><input type=button onclick=window.location.href='chart_central.html' value=Central></div></body>"
 buttoneast = "<body><div align=center><input type=button onclick=window.location.href='chart_east.html' value=East></div></body>"
 buttonnorth_east = "<body><div align=center><input type=button onclick=window.location.href='chart_north_east.html' value='North East'></div></body>"
-buttonnorth = "<body><div align=center><input type=button onclick=window.location.href='chart_north.html' value=North></div></body>"
+buttonnorth = "<body><div align=center><input type=button onclick=window.loca7tion.href='chart_north.html' value=North></div></body>"
 index.write(htmlhomename)
 index.write(bghead)
 index.write(twocolumn)
@@ -105,4 +135,3 @@ index.write(buttoneast)
 index.write(buttonnorth_east)
 index.write(buttonnorth)
 index.close()
-
