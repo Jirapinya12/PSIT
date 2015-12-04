@@ -67,7 +67,7 @@ bghead = "<head>\
 <style type='text/css'>\
 <!--\
 BODY{\
-background-image: url('head1.jpg');\
+background-image: url('http://www.mx7.com/i/e86/kuaoht.jpg');\
 background-repeat: no-repeat;\
 background-position: top;\
 }\
