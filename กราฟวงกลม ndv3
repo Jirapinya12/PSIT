@@ -146,11 +146,11 @@ import folium
 from PIL import Image
 
 map_thailand = folium.Map(location=[15.0000, 100.0000], width=1920, height = 800, zoom_start=5) # [ละติจูด,ลองติดจูด] และการซูมลำดับ 5
-pic_north = "<img src='http://image.free.in.th/v/2013/ik/151204043943.gif'  height='300' width='300'>"
-pic_north_east = "<img src='http://image.free.in.th/v/2013/is/151204045111.gif'  height='300' width='300'>"
-pic_east = "<img src='http://image.free.in.th/v/2013/ik/151204052649.gif'  height='300' width='300'>"
-pic_south = "<img src='http://image.free.in.th/v/2013/ie/151204050319.gif'  height='300' width='300'>"
-pic_central = "<img src='http://image.free.in.th/v/2013/iz/151204053746.gif'  height='300' width='300'>"
+pic_north = "<img src='http://image.free.in.th/v/2013/ii/151205072558.gif'  height='300' width='300'>"
+pic_north_east = "<img src='http://i.imgur.com/QqZGLug.gif'  height='300' width='300'>"
+pic_east = "<img src='http://www.mx7.com/i/c60/MGlkic.gif'  height='300' width='300'>"
+pic_south = "<img src='http://image.free.in.th/v/2013/io/151205080659.gif'  height='300' width='300'>"
+pic_central = "<img src='http://www.mx7.com/i/a98/JTibn5.gif'  height='300' width='300'>"
 
 #ภาคกลาง
 map_thailand.simple_marker([15.08, 100.2], popup=pic_central)
