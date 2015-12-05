@@ -65,8 +65,6 @@ south.close()
 import codecs
 from nvd3 import discreteBarChart
 
-extra_serie = {"tooltip": {"y_start": "", "y_end": " %"}}
-
 #data
 year = [2516, 2519, 2521, 2525, 2528, 2531, 2532, 2534, 2536, 2538, 2541, 2543, 2547, 2548, 2549, 2551, 2556, 2557]
 north = [66.96, 60.32, 56.96, 51.73, 49.59, 47.39, 47.29, 45.47, 44.35, 43.55, 43.06, 56.75, 54.24, 47.31, 52.09, 56.04, 52.36, 52.60]
@@ -77,7 +75,7 @@ south = [26.07, 28.48, 24.89, 23.25, 21.9, 20.19, 20.65, 19.02, 18.11, 17.61, 17
 
 #ภาคเหนือ
 chart_northbar = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
-chart_northbar.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
+chart_northbar.add_serie(y=north, x=year)#---ใส่ค่า
 chart_northbar.buildhtml()
 northbar = open("chart_northbar.html", "w")
 northbar.write(chart_northbar.htmlcontent)
@@ -85,7 +83,7 @@ northbar.close()
 
 #ภาคตะวันออกเฉียงเหนือ
 chart_north_eastbar = discreteBarChart(name='North_east', height=400, width=800)#----สร้างแท่งวงกลมภาคตะวันออกเฉียงเหนือ
-chart_north_eastbar.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
+chart_north_eastbar.add_serie(y=north_east, x=year)#---ใส่ค่า
 chart_north_eastbar.buildhtml()
 north_eastbar = open("chart_north_eastbar.html", "w")
 north_eastbar.write(chart_north_eastbar.htmlcontent)
@@ -93,7 +91,7 @@ north_eastbar.close()
 
 #ภาคตะวันออก
 chart_eastbar = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟแท่งภาคตะวันออก
-chart_eastbar.add_serie(y=east, x=year, extra=extra_serie)#---ใส่ค่า
+chart_eastbar.add_serie(y=east, x=year)#---ใส่ค่า
 chart_eastbar.buildhtml()
 eastbar = open("chart_eastbar.html", "w")
 eastbar.write(chart_eastbar.htmlcontent)
@@ -101,7 +99,7 @@ eastbar.close()
 
 #ภาคกลาง
 chart_centralbar = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
-chart_centralbar.add_serie(y=central, x=year, extra=extra_serie)#---ใส่ค่า
+chart_centralbar.add_serie(y=central, x=year)#---ใส่ค่า
 chart_centralbar.buildhtml()
 centralbar = open("chart_centralbar.html", "w")
 centralbar.write(chart_centralbar.htmlcontent)
@@ -109,7 +107,7 @@ centralbar.close()
 
 #ภาคใต้
 chart_southbar = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟแท่งภาคใต้
-chart_southbar.add_serie(y=south, x=year, extra=extra_serie)#---ใส่ค่า
+chart_southbar.add_serie(y=south, x=year)#---ใส่ค่า
 chart_southbar.buildhtml()
 southbar = open("chart_southbar.html", "w")
 southbar.write(chart_southbar.htmlcontent)
