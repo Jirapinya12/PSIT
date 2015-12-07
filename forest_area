@@ -180,7 +180,7 @@ linknorth_east = "<a href=north_east><font size=20>"+"North east"+"</font></a>"
 linknorth = "<a href=north><font size=20>"+"North"+"</font></a>"
 
 index = open("index.html","w")
-namesite ="<head><title>Project</title></head>"
+namesite ="<head><title>Forest Area</title></head>"
 body = "<html lang='en'>\
 <head>\
 <style type='text/css'>\
@@ -234,38 +234,8 @@ background-position: top;\
 </div>\
 \
 </body>"
-twocolumn = "<body>\
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>\
-<div><table style='width:1000px; height:ความสูงpx' cellspacing=7 cellpadding=0 width=730 border=0>\
-    <tbody>\
-    <meta charset='tis-620'>\
-    <!---left column--->\
-        <tr style=text-align: left>\
-            <td valign=top><font color='#402418'>55555<font color='#000000'>สวัสดี\
-            <p align=center>ทราย</p>\
-            <center>ทราย</center><center></center>\
-            <p align=center>อออออออย</p>\
-            <p align=center>ออย</p>\
-            </font></font></td>\
-    <!---right column--->\
-            <td valign=top width=300>สวัสดี<dt>\
-            <div align=center>ออย</div>\
-            </dt></td>\
-        </tr>\
-    </tbody>\
-</table></div>\
-</body>"
-buttonsouth = "<body><div align=center><input type=button onclick=window.location.href='chart_south.html' value=South></div></body>"
-buttoncentral = "<body><div align=center><input type=button onclick=window.location.href='chart_central.html' value=Central></div></body>"
-buttoneast = "<body><div align=center><input type=button onclick=window.location.href='chart_east.html' value=East></div></body>"
-buttonnorth_east = "<body><div align=center><input type=button onclick=window.location.href='chart_north_east.html' value='North East'></div></body>"
-buttonnorth = "<body><div align=center><input type=button onclick=window.location.href='chart_north.html' value=North></div></body>"
+
 index.write(namesite)
 index.write(body)
-##index.write(twocolumn)
 ##index.write(linksouth)
-##index.write(buttoncentral)
-##index.write(buttoneast)
-##index.write(buttonnorth_east)
-##index.write(buttonnorth)
 index.close()
