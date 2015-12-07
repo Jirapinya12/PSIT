@@ -180,8 +180,9 @@ linknorth_east = "<a href=north_east><font size=20>"+"North east"+"</font></a>"
 linknorth = "<a href=north><font size=20>"+"North"+"</font></a>"
 
 index = open("index.html","w")
-htmlhomename ="<head><title>Project</title></head>"
-bghead = "<head>\
+namesite ="<head><title>Project</title></head>"
+body = "<html lang='en'>\
+<head>\
 <style type='text/css'>\
 <!--\
 BODY{\
@@ -190,19 +191,64 @@ background-repeat: no-repeat;\
 background-position: top;\
 }\
 </style>\
-</head>"
+</head>\
+\
+<body>\
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>\
+  <title>Bootstrap Case</title>\
+  <meta charset='tis-620'>\
+  <meta name='viewport' content='width=device-width, initial-scale=1'>\
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>\
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>\
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>\
+<body>\
+\
+\
+<div class='container'>\
+  <h2>Welcome</h2>\
+  <ul class='nav nav-tabs'>\
+    <li class='active' ><a data-toggle='tab' href='#home'>Home</a></li>\
+    <li><a data-toggle='tab' href='#menu1'>Menu 1</a></li>\
+    <li><a data-toggle='tab' href='#menu2'>Menu 2</a></li>\
+    <li><a data-toggle='tab' href='#menu3'>Menu 3</a></li>\
+  </ul>\
+\
+  <div class='tab-content'>\
+    <div id='home' class='tab-pane fade in active'>\
+      <h3>HOME</h3>\
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\
+    </div>\
+    <div id='menu1' class='tab-pane fade'>\
+      <h3>Menu 1</h3>\
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\
+    </div>\
+    <div id='menu2' class='tab-pane fade'>\
+      <h3>Menu 2</h3>\
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>\
+    </div>\
+    <div id='menu3' class='tab-pane fade'>\
+      <h3>Menu 3</h3>\
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>\
+    </div>\
+  </div>\
+</div>\
+\
+</body>"
 twocolumn = "<body>\
 <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>\
-<div align=center><table style='width:730px; height:ความสูงpx' cellspacing=7 cellpadding=0 width=730 border=0>\
+<div><table style='width:1000px; height:ความสูงpx' cellspacing=7 cellpadding=0 width=730 border=0>\
     <tbody>\
+    <meta charset='tis-620'>\
+    <!---left column--->\
         <tr style=text-align: left>\
-            <td valign=top><font color='#402418'><font color='#000000'>\
+            <td valign=top><font color='#402418'>55555<font color='#000000'>สวัสดี\
             <p align=center>ทราย</p>\
             <center>ทราย</center><center></center>\
             <p align=center>อออออออย</p>\
             <p align=center>ออย</p>\
             </font></font></td>\
-            <td valign=top width=300><dt>\
+    <!---right column--->\
+            <td valign=top width=300>สวัสดี<dt>\
             <div align=center>ออย</div>\
             </dt></td>\
         </tr>\
@@ -213,13 +259,13 @@ buttonsouth = "<body><div align=center><input type=button onclick=window.locatio
 buttoncentral = "<body><div align=center><input type=button onclick=window.location.href='chart_central.html' value=Central></div></body>"
 buttoneast = "<body><div align=center><input type=button onclick=window.location.href='chart_east.html' value=East></div></body>"
 buttonnorth_east = "<body><div align=center><input type=button onclick=window.location.href='chart_north_east.html' value='North East'></div></body>"
-buttonnorth = "<body><div align=center><input type=button onclick=window.loca7tion.href='chart_north.html' value=North></div></body>"
-index.write(htmlhomename)
-index.write(bghead)
-index.write(twocolumn)
-index.write(linksouth)
-index.write(buttoncentral)
-index.write(buttoneast)
-index.write(buttonnorth_east)
-index.write(buttonnorth)
+buttonnorth = "<body><div align=center><input type=button onclick=window.location.href='chart_north.html' value=North></div></body>"
+index.write(namesite)
+index.write(body)
+##index.write(twocolumn)
+##index.write(linksouth)
+##index.write(buttoncentral)
+##index.write(buttoneast)
+##index.write(buttonnorth_east)
+##index.write(buttonnorth)
 index.close()
