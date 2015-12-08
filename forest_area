@@ -6,8 +6,7 @@ type = 'pieChart'
 #data
 year = [2516, 2519, 2521, 2525, 2528, 2531, 2532, 2534, 2536, 2538, 2541, 2543, 2547, 2548, 2549, 2551, 2556, 2557]
 north = [70996875.00, 63954375.00, 59335625.00, 54847500.00, 52578750.00, 50251250.00, 50138750.00, 48214375.00, 47019375.00,\
-         46178750.00, 45662625.00, 60168926.72, 57542765.00, 55
-         863118.75, 55230068.75, 59421715.33, 56283600.00, 56537481.25]
+         46178750.00, 45662625.00, 60168926.72, 57542765.00, 55863118.75, 55230068.75, 59421715.33, 56283600.00, 56537481.25]
 north_east = [ 31669375.00, 25933750.00, 19513125.00, 16178750.00, 15987500.00, 14808125.00, 14741250.00, 13624375.00, 13420625.00,\
                13290625.00, 13115000.00, 16579338.12, 17559806.00, 15834125.00, 15343675.00, 17222213.98, 15813931.25, 15748931.25]
 east = [9397500.00, 7894375.00, 6898125.00, 5000000.00, 4993750.00, 4896250.00, 4866250.00, 4806875.00, 4771250.00, 4744375.00,\
@@ -21,21 +20,16 @@ extra_serie = {"tooltip": {"y_start": "", "y_end": " Rai"}}
 
 #_____________________________________________________________________PieChart________________________________________________________________________#
 
+piechart = open("piechart.html","w")
 #ภาคเหนือ
-chart_north = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
+chart_north = pieChart(name=type, color_category='category20c', height=500, width=980)#----สร้างกราฟวงกลมภาคเหนือ
 chart_north.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north.buildhtml()
-north = open("chart_north.html", "w")
-north.write(chart_north.htmlcontent)
-north.close()
 
 #ภาคตะวันออกเฉียงเหนือ
 chart_north_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
 chart_north_east.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north_east.buildhtml()
-north_east = open("chart_north_east.html", "w")
-north_east.write(chart_north_east.htmlcontent)
-north_east.close()
 
 #ภาคตะวันออก
 chart_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออก
@@ -60,6 +54,17 @@ chart_south.buildhtml()
 south = open("chart_south.html", "w")
 south.write(chart_south.htmlcontent)
 south.close()
+
+goo = "<script></script>\
+<body>\
+<div id='kak'></div>\
+<br></br><br></br>fuck<br></br><br></body>"
+
+piechart.write(chart_north.htmlcontent)
+piechart.write(goo)
+piechart.write(chart_north_east.htmlcontent)
+piechart.close()
+
 
 #_______________________________________________________________discreteBarChart_____________________________________________________________________#
 
@@ -140,9 +145,7 @@ forest_area= open("StackedAreaChart.html", "w")
 forest_area.write(stackedareachart.htmlcontent)
 forest_area.close()
 
-
-#______________________________________Compare Percent_________________________________________________________________________________________
-
+#__________________________________________________________Compare Percent_________________________________________________________________
 import codecs
 from nvd3 import discreteBarChart
 
@@ -155,44 +158,44 @@ central = [35.56-32.38, 30.31-27.47, 27.47-26.24, 26.24-25.59, 25.59-25.55, 25.5
 south = [26.07-28.48, 24.89-23.25, 23.25-21.90, 21.90-20.19, 20.19-20.65, 20.65-19.02, 19.02-18.11, 18.11-17.61, 17.61-17.15, 17.15-24.62, 24.62-25.37, 25.37-24.99, 24.99-24.46, 24.46-27.03, 27.03-23.95, 23.95-23.97]
 
 #ภาคเหนือ
-chart_north = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
-chart_north.add_serie(y=north, x=year)#---ใส่ค่า
-chart_north.buildhtml()
-north = open("chart_north.html", "w")
-north.write(chart_north.htmlcontent)
-north.close()
+chart_north_percent = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
+chart_north_percent.add_serie(y=north, x=year)#---ใส่ค่า
+chart_north_percent.buildhtml()
+north_percent = open("chart_north.html", "w")
+north_percent.write(chart_north.htmlcontent)
+north_percent.close()
 
 #ภาคตะวันออกเฉียงเหนือ
-chart_north_east = discreteBarChart(name='North_east', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
-chart_north_east.add_serie(y=north_east, x=year)#---ใส่ค่า
-chart_north_east.buildhtml()
-north_east = open("chart_north_east.html", "w")
-north_east.write(chart_north_east.htmlcontent)
-north_east.close()
+chart_north_east_percent = discreteBarChart(name='North_east', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
+chart_north_east_percent.add_serie(y=north_east, x=year)#---ใส่ค่า
+chart_north_east_percent.buildhtml()
+north_east_percent = open("chart_north_east.html", "w")
+north_east_percent.write(chart_north_east.htmlcontent)
+north_east_percent.close()
 
 #ภาคตะวันออก
-chart_east = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออก
-chart_east.add_serie(y=east, x=year)#---ใส่ค่า
-chart_east.buildhtml()
-east = open("chart_east.html", "w")
-east.write(chart_east.htmlcontent)
-east.close()
+chart_east_percent = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออก
+chart_east_percent.add_serie(y=east, x=year)#---ใส่ค่า
+chart_east_percent.buildhtml()
+east_percent = open("chart_east.html", "w")
+east_percent.write(chart_east.htmlcontent)
+east_percent.close()
 
 #ภาคกลาง
-chart_central = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟวงกลมภาคเหนือ
-chart_central.add_serie(y=central, x=year)#---ใส่ค่า
-chart_central.buildhtml()
-central = open("chart_central.html", "w")
-central.write(chart_central.htmlcontent)
-central.close()
+chart_central_percent = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟวงกลมภาคเหนือ
+chart_central_percent.add_serie(y=central, x=year)#---ใส่ค่า
+chart_central_percent.buildhtml()
+central_percent = open("chart_central.html", "w")
+central_percent.write(chart_central.htmlcontent)
+central_percent.close()
 
 #ภาคใต้
-chart_south = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟวงกลมภาคใต้
-chart_south.add_serie(y=south, x=year)#---ใส่ค่า
-chart_south.buildhtml()
-south = open("chart_south.html", "w")
-south.write(chart_south.htmlcontent)
-south.close()
+chart_south_percent = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟวงกลมภาคใต้
+chart_south_percent.add_serie(y=south, x=year)#---ใส่ค่า
+chart_south_percent.buildhtml()
+south_percent = open("chart_south.html", "w")
+south_percent.write(chart_south.htmlcontent)
+south_percent.close()
 
 #__________________________________________________________________Map Thailand_____________________________________________________________________#
 
@@ -201,7 +204,7 @@ from PIL import Image
 
 map_thailand = folium.Map(location=[15.0000, 100.0000], width=1920, height = 800, zoom_start=5) # [ละติจูด,ลองติดจูด] และการซูมลำดับ 5
 pic_north = "<img src='http://image.free.in.th/v/2013/ii/151205072558.gif'  height='300' width='300'>"
-pic_north_east = "<img src='http://www.mx7.com/i/6f9/8pHBfr.gif'  height='300' width='300'>"
+pic_north_east = "<img src='http://i.imgur.com/QqZGLug.gif'  height='300' width='300'>"
 pic_east = "<img src='http://www.mx7.com/i/c60/MGlkic.gif'  height='300' width='300'>"
 pic_south = "<img src='http://image.free.in.th/v/2013/io/151205080659.gif'  height='300' width='300'>"
 pic_central = "<img src='http://www.mx7.com/i/a98/JTibn5.gif'  height='300' width='300'>"
@@ -223,8 +226,8 @@ map_thailand.simple_marker([16.3, 103], popup=pic_north_east)
 
 map_thailand.create_map(path='thailandmap.html')
 
-#______________________________________________________________________Index_________________________________________________________________________#
 
+#----------------------------------index
 linksouth = "<a href=chart_south.html><font size=5><div align=center>"+"South"+"</div></font></a>"
 _ = " "
 _1 = " "
@@ -293,4 +296,3 @@ index.write(namesite)
 index.write(body)
 ##index.write(linksouth)
 index.close()
-
