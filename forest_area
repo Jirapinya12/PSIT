@@ -136,10 +136,11 @@ north_east = [30.01, 24.57, 18.49, 15.33, 15.15, 14.03, 13.97, 12.91, 12.72, 12.
 east = [41.19, 34.6, 30.24, 21.92, 21.89, 21.46, 21.33, 21.07, 20.29, 20.8, 20.57, 23.12, 22.57, 21.74, 21.6, 21.01, 22.45, 22.18]
 central = [35.56, 32.38, 30.31, 27.47, 26.24, 25.59, 25.55, 24.65, 24.34, 24.17, 23.81, 31.84, 31.52, 30.68, 30.5, 29.81, 32.79, 32.86]
 south = [26.07, 28.48, 24.89, 23.25, 21.9, 20.19, 20.65, 19.02, 18.11, 17.61, 17.15, 24.62, 25.37, 24.99, 24.46, 27.03, 23.95, 23.97]
+extra_serie = {"tooltip": {"y_start": "", "y_end": " %"}}
 
 #ภาคเหนือ
 barchart_north = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
-barchart_north.add_serie(y=north, x=year)#---ใส่ค่า
+barchart_north.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
 barchart_north.buildhtml()
 northbar = open("barchart_north.html", "w")
 northbar.write(barchart_north.htmlcontent)
@@ -147,7 +148,7 @@ northbar.close()
 
 #ภาคตะวันออกเฉียงเหนือ
 barchart_north_east = discreteBarChart(name='North_east', height=400, width=800)#----สร้างแท่งวงกลมภาคตะวันออกเฉียงเหนือ
-barchart_north_east.add_serie(y=north_east, x=year)#---ใส่ค่า
+barchart_north_east.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
 barchart_north_east.buildhtml()
 north_eastbar = open("barchart_north_east.html", "w")
 north_eastbar.write(barchart_north_east.htmlcontent)
@@ -155,7 +156,7 @@ north_eastbar.close()
 
 #ภาคตะวันออก
 barchart_east = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟแท่งภาคตะวันออก
-barchart_east.add_serie(y=east, x=year)#---ใส่ค่า
+barchart_east.add_serie(y=east, x=year, extra=extra_serie)#---ใส่ค่า
 barchart_east.buildhtml()
 eastbar = open("barchart_east.html", "w")
 eastbar.write(barchart_east.htmlcontent)
@@ -163,7 +164,7 @@ eastbar.close()
 
 #ภาคกลาง
 barchart_central = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
-barchart_central.add_serie(y=central, x=year)#---ใส่ค่า
+barchart_central.add_serie(y=central, x=year, extra=extra_serie)#---ใส่ค่า
 barchart_central.buildhtml()
 centralbar = open("barchart_central.html", "w")
 centralbar.write(barchart_central.htmlcontent)
@@ -171,7 +172,7 @@ centralbar.close()
 
 #ภาคใต้
 barchart_south = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟแท่งภาคใต้
-barchart_south.add_serie(y=south, x=year)#---ใส่ค่า
+barchart_south.add_serie(y=south, x=year, extra=extra_serie)#---ใส่ค่า
 barchart_south.buildhtml()
 southbar = open("barchart_south.html", "w")
 southbar.write(barchart_south.htmlcontent)
@@ -272,15 +273,15 @@ extra_serie = {"tooltip": {"y_start": "", "y_end": " Percent"}}
 
 #ภาคเหนือ
 multibarchart_north = multiBarHorizontalChart(name='North', height=400, width=800)
-multibarchart_north.add_serie(name="Serie 1", y=north, x=year)#---ใส่ค่า
+multibarchart_north.add_serie(name="North", y=north, x=year, extra=extra_serie)#---ใส่ค่า
 multibarchart_north.buildhtml()
 northbar = open("multibarchart_north.html", "w")
 northbar.write(multibarchart_north.htmlcontent)
 northbar.close()
 
 #ภาคตะวันออกเฉียงเหนือ
-multibarchart_north_east = multiBarHorizontalChart(name='North_east', height=400, width=800)
-multibarchart_north_east.add_serie(y=north_east, x=year)#---ใส่ค่า
+multibarchart_north_east = multiBarHorizontalChart(name='North_East', height=400, width=800)
+multibarchart_north_east.add_serie(name="North_East", y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
 multibarchart_north_east.buildhtml()
 north_eastbar = open("multibarchart_north_east.html", "w")
 north_eastbar.write(multibarchart_north_east.htmlcontent)
@@ -288,7 +289,7 @@ north_eastbar.close()
 
 #ภาคตะวันออก
 multibarchart_east = multiBarHorizontalChart(name='East', height=400, width=800)
-multibarchart_east.add_serie(y=east, x=year)#---ใส่ค่า
+multibarchart_east.add_serie(name="East", y=east, x=year, extra=extra_serie)#---ใส่ค่า
 multibarchart_east.buildhtml()
 eastbar = open("multibarchart_east.html", "w")
 eastbar.write(multibarchart_east.htmlcontent)
@@ -296,7 +297,7 @@ eastbar.close()
 
 #ภาคกลาง
 multibarchart_central = multiBarHorizontalChart(name='Central', height=400, width=800)
-multibarchart_central.add_serie(y=central, x=year)#---ใส่ค่า
+multibarchart_central.add_serie(name="Central", y=central, x=year, extra=extra_serie)#---ใส่ค่า
 multibarchart_central.buildhtml()
 centralbar = open("multibarchart_central.html", "w")
 centralbar.write(multibarchart_central.htmlcontent)
@@ -304,7 +305,7 @@ centralbar.close()
 
 #ภาคใต้
 multibarchart_south = multiBarHorizontalChart(name='South', height=400, width=800)
-multibarchart_south.add_serie(y=south, x=year)#---ใส่ค่า
+multibarchart_south.add_serie(name="South", y=south, x=year, extra=extra_serie)#---ใส่ค่า
 multibarchart_south.buildhtml()
 southbar = open("multibarchart_south.html", "w")
 southbar.write(multibarchart_south.htmlcontent)
