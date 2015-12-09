@@ -25,11 +25,17 @@ piechart = open("piechart.html","w")
 chart_north = pieChart(name=type, color_category='category20c', height=500, width=980)#----สร้างกราฟวงกลมภาคเหนือ
 chart_north.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north.buildhtml()
+north = open("chart_north.html", "w")
+north.write(chart_north.htmlcontent)
+north.close()
 
 #ภาคตะวันออกเฉียงเหนือ
 chart_north_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
 chart_north_east.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north_east.buildhtml()
+north_east = open("chart_northeast.html", "w")
+north_east.write(chart_northeast.htmlcontent)
+north_east.close()
 
 #ภาคตะวันออก
 chart_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออก
