@@ -397,8 +397,30 @@ background-position: top;\
 \
 </body>"
 
+twocolumn = "<body>\
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>\
+<div><table style='width:1000px; height:ความสูงpx' cellspacing=7 cellpadding=0 width=730 border=0>\
+    <tbody>\
+    <meta charset='tis-620'>\
+    <!---left column--->\
+        <tr style=text-align: left>\
+            <td valign=top><FONT FACE='Cordia New' size=20><font color='#402418'>55555<font color='#000000'>สวัสดี\
+            <p align=center>ทราย</p>\
+            <center>ทราย</center><center></center>\
+            <p align=center>อออออออย</p>\
+            <p align=center>ออย</p>\
+            </font></font></FONT>\</td>\
+    <!---right column--->\
+            <td valign=top width=300>สวัสดี<dt>\
+            <div align=center>ออย</div>\
+            </dt></td>\
+        </tr>\
+    </tbody>\
+</table></div>\
+</body>"
+
 index.write(namesite)
 index.write(body)
-##index.write(linksouth)
+index.write(twocolumn)
 index.close()
 
