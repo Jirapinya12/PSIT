@@ -1,3 +1,5 @@
+#_____________________________________________________________________PieChart(กราฟวงกลม)________________________________________________________________________#
+
 import codecs
 from nvd3 import pieChart
 
@@ -18,14 +20,11 @@ south = [11521875.00, 12586875.00, 11001875.00, 10276250.00, 9678125.00, 9143750
 
 extra_serie = {"tooltip": {"y_start": "", "y_end": " Rai"}}
 
-#_____________________________________________________________________PieChart(กราฟวงกลม)________________________________________________________________________#
-
-piechart = open("piechart.html","w")
 #ภาคเหนือ
 chart_north = pieChart(name=type, color_category='category20c', height=500, width=980)#----สร้างกราฟวงกลมภาคเหนือ
 chart_north.add_serie(y=north, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north.buildhtml()
-north = open("chart_north.html", "w")
+north = open("piechart_north.html", "w")
 north.write(chart_north.htmlcontent)
 north.close()
 
@@ -33,15 +32,15 @@ north.close()
 chart_north_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
 chart_north_east.add_serie(y=north_east, x=year, extra=extra_serie)#---ใส่ค่า
 chart_north_east.buildhtml()
-north_east = open("chart_northeast.html", "w")
-north_east.write(chart_northeast.htmlcontent)
+north_east = open("piechart_north_east.html", "w")
+north_east.write(chart_north_east.htmlcontent)
 north_east.close()
 
 #ภาคตะวันออก
 chart_east = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคตะวันออก
 chart_east.add_serie(y=east, x=year, extra=extra_serie)#---ใส่ค่า
 chart_east.buildhtml()
-east = open("chart_east.html", "w")
+east = open("piechart_east.html", "w")
 east.write(chart_east.htmlcontent)
 east.close()
 
@@ -49,7 +48,7 @@ east.close()
 chart_central = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคเหนือ
 chart_central.add_serie(y=central, x=year, extra=extra_serie)#---ใส่ค่า
 chart_central.buildhtml()
-central = open("chart_central.html", "w")
+central = open("piechart_central.html", "w")
 central.write(chart_central.htmlcontent)
 central.close()
 
@@ -57,41 +56,31 @@ central.close()
 chart_south = pieChart(name=type, color_category='category20c', height=980, width=1280)#----สร้างกราฟวงกลมภาคใต้
 chart_south.add_serie(y=south, x=year, extra=extra_serie)#---ใส่ค่า
 chart_south.buildhtml()
-south = open("chart_south.html", "w")
+south = open("piechart_south.html", "w")
 south.write(chart_south.htmlcontent)
 south.close()
-
-goo = "<script></script>\
-<body>\
-<div id='kak'></div>\
-<br></br><br></br>fuck<br></br><br></body>"
-
-piechart.write(chart_north.htmlcontent)
-piechart.write(goo)
-piechart.write(chart_north_east.htmlcontent)
-piechart.close()
 
 #_________________________________________________________________Compare Percent LineChart(กราฟเส้น)___________________________________________________
 
 from nvd3 import lineChart
 
 #data
-year = [2516, 2519, 2521, 2525, 2528, 2531, 2532, 2534, 2536, 2538, 2541, 2543, 2547, 2548, 2549, 2551, 2556, 2557]
-north = [70996875.00, 63954375.00, 59335625.00, 54847500.00, 52578750.00, 50251250.00, 50138750.00, 48214375.00, 47019375.00,\
-         46178750.00, 45662625.00, 60168926.72, 57542765.00, 55863118.75, 55230068.75, 59421715.33, 56283600.00, 56537481.25]
-north_east = [ 31669375.00, 25933750.00, 19513125.00, 16178750.00, 15987500.00, 14808125.00, 14741250.00, 13624375.00, 13420625.00,\
-               13290625.00, 13115000.00, 16579338.12, 17559806.00, 15834125.00, 15343675.00, 17222213.98, 15813931.25, 15748931.25]
-east = [9397500.00, 7894375.00, 6898125.00, 5000000.00, 4993750.00, 4896250.00, 4866250.00, 4806875.00, 4771250.00, 4744375.00,\
-        4691875.00, 5273927.01, 5150204.00, 4959887.50, 4927262.50, 5020875.00, 5139025.00, 5076312.50]
-central = [14981250.00, 13641250.00, 12766250.00, 11572500.00, 11053125.00, 10777500.00, 10764375.00, 10385000.00, 10255000.00,\
-           10180000.00, 10030625.00, 13413654.05, 13277026.00, 12924112.50, 12846918.75, 13892232.01, 13832637.50, 13863193.75]
-south = [11521875.00, 12586875.00, 11001875.00, 10276250.00, 9678125.00, 9143750.00, 9125000.00, 8405625.00, 8005000.00, 7784375.00,\
-         7578125.00, 10883393.57, 11214559.00, 11044568.75, 10809943.75, 11683995.69, 11050350.00, 11059475.00]
+year = ['2516', '2519', '2521', '2525', '2528', '2531', '2532', '2534', '2536', '2538', '2541', '2543', '2547', '2548', '2549', '2551', '2556', '2557']
+north = [70996875, 63954375, 59335625, 54847500, 52578750, 50251250, 50138750, 48214375, 47019375,\
+46178750, 45662625, 60168927, 57542765, 55863119, 55230069, 59421715, 56283600, 56537481]
+north_east = [31669375, 25933750, 19513125, 16178750, 15987500, 14808125, 14741250, 13624375, 13420625,\
+13290625, 13115000, 16579338, 17559806, 15834125, 15343675, 17222214, 15813931, 15748931]
+east = [9397500, 7894375, 6898125, 5000000, 4993750, 4896250, 4866250, 4806875, 4771250, 4744375,\
+4691875, 5273927, 5150204, 4959888, 4927263, 5020875, 5139025, 5076313]
+central = [14981250, 13641250, 12766250, 11572500, 11053125, 10777500, 10764375, 10385000, 10255000,\
+10180000, 10030625, 13413654, 13277026, 12924113, 12846919, 13892232, 13832638, 13863194]
+south = [11521875, 12586875, 11001875, 10276250, 9678125, 9143750, 9125000, 8405625, 8005000, 7784375,\
+7578125, 10883393.574, 11214559, 11044569, 10809944, 11683996, 1105035, 11059475]
 
 extra_serie = {"tooltip": {"y_start": "", "y_end": " Rai"}}
 
 #ภาคเหนือ
-linechart_north = lineChart(name='North', height=400, width=800)
+linechart_north = lineChart(name='North', height=400, width=1000)
 linechart_north.add_serie(name="North", y=north, x=year)#---ใส่ค่า
 linechart_north.buildhtml()
 north_ = open("linechart_north.html", "w")
@@ -228,7 +217,7 @@ south = [28.48-26.07, 24.89-28.48, 23.25-24.89, 21.90-23.25, 20.69-21.90, 20.65-
 comparechart_north_percent = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
 comparechart_north_percent.add_serie(y=north, x=year)#---ใส่ค่า
 comparechart_north_percent.buildhtml()
-north_percent = open("comparechart_north_percent.html", "w")
+north_percent = open("comparechart_north.html", "w")
 north_percent.write(comparechart_north_percent.htmlcontent)
 north_percent.close()
 
@@ -236,7 +225,7 @@ north_percent.close()
 comparechart_north_east_percent = discreteBarChart(name='North_east', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
 comparechart_north_east_percent.add_serie(y=north_east, x=year)#---ใส่ค่า
 comparechart_north_east_percent.buildhtml()
-north_east_percent = open("comparechart_north_east_percent.html", "w")
+north_east_percent = open("comparechart_north_east.html", "w")
 north_east_percent.write(comparechart_north_east_percent.htmlcontent)
 north_east_percent.close()
 
@@ -244,7 +233,7 @@ north_east_percent.close()
 comparechart_east_percent = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออก
 comparechart_east_percent.add_serie(y=east, x=year)#---ใส่ค่า
 comparechart_east_percent.buildhtml()
-east_percent = open("comparechart_east_percent.html", "w")
+east_percent = open("comparechart_east.html", "w")
 east_percent.write(comparechart_east_percent.htmlcontent)
 east_percent.close()
 
@@ -252,7 +241,7 @@ east_percent.close()
 comparechart_central_percent = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟวงกลมภาคเหนือ
 comparechart_central_percent.add_serie(y=central, x=year)#---ใส่ค่า
 comparechart_central_percent.buildhtml()
-central_percent = open("comparechart_central_percent.html", "w")
+central_percent = open("comparechart_central.html", "w")
 central_percent.write(comparechart_central_percent.htmlcontent)
 central_percent.close()
 
@@ -260,7 +249,7 @@ central_percent.close()
 comparechart_south_percent = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟวงกลมภาคใต้
 comparechart_south_percent.add_serie(y=south, x=year)#---ใส่ค่า
 comparechart_south_percent.buildhtml()
-south_percent = open("comparechart_south_percent.html", "w")
+south_percent = open("comparechart_south.html", "w")
 south_percent.write(comparechart_south_percent.htmlcontent)
 south_percent.close()
 
@@ -275,7 +264,8 @@ north = [60.32-66.96, 55.96-60.32, 51.73-55.96, 49.59-51.73, 47.39-49.59, 47.29-
 north_east = [24.57-30.01, 18.49-24.57, 15.33-18.49, 15.15-15.33, 14.03-15.15, 13.97-14.03, 12.91-13.97, 12.72-12.91, 12.59-12.72, 12.43-12.59, 15.71-12.43, 16.64-15.71, 15.00-16.64, 14.54-15.00, 16.32-14.54, 15.09-16.32, 15.02-15.09]
 east = [34.60-41.19, 30.24-34.60, 21.92-30.24, 21.89-21.92, 21.46-21.89, 21.33-21.46, 21.07-21.33, 20.29-21.07, 20.80-20.29, 20.57-20.80, 23.12-20.57, 22.57-23.12, 21.74-22.57, 21.60-21.74, 21.01-21.60, 22.45-21.01, 22.18-22.45]
 central = [32.38-35.56, 30.31-32.38, 27.47-30.31, 26.24-27.47, 25.59-26.24, 25.55-25.59, 24.65-25.55, 24.34-24.65, 24.17-24.34, 23.81-24.17, 31.84-23.81, 31.52-31.84, 30.68-31.52, 30.50-30.68, 29.81-30.50, 32.79-29.81, 32.86-32.79]
-south = [28.48-26.07, 24.89-28.48, 23.25-24.89, 21.90-23.25, 20.69-21.90, 20.65-20.19, 19.02-20.65, 18.11-19.02, 17.61-18.11, 17.15-17.61, 24.62-17.15, 25.37-24.62, 24.99-25.37, 24.46-24.99, 27.03-24.46, 23.95-27.03, 23.97-23.95]extra_serie = {"tooltip": {"y_start": "", "y_end": " Percent"}}
+south = [28.48-26.07, 24.89-28.48, 23.25-24.89, 21.90-23.25, 20.69-21.90, 20.65-20.19, 19.02-20.65, 18.11-19.02, 17.61-18.11, 17.15-17.61, 24.62-17.15, 25.37-24.62, 24.99-25.37, 24.46-24.99, 27.03-24.46, 23.95-27.03, 23.97-23.95]
+extra_serie = {"tooltip": {"y_start": "", "y_end": " Percent"}}
 
 #ภาคเหนือ
 multibarchart_north = multiBarHorizontalChart(name='North', height=400, width=800)
