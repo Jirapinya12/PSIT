@@ -225,43 +225,43 @@ central = [32.38-35.56, 30.31-32.38, 27.47-30.31, 26.24-27.47, 25.59-26.24, 25.5
 south = [28.48-26.07, 24.89-28.48, 23.25-24.89, 21.90-23.25, 20.69-21.90, 20.65-20.19, 19.02-20.65, 18.11-19.02, 17.61-18.11, 17.15-17.61, 24.62-17.15, 25.37-24.62, 24.99-25.37, 24.46-24.99, 27.03-24.46, 23.95-27.03, 23.97-23.95]
 
 #ภาคเหนือ
-chart_north_percent = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
-chart_north_percent.add_serie(y=north, x=year)#---ใส่ค่า
-chart_north_percent.buildhtml()
-north_percent = open("chart_north.html", "w")
-north_percent.write(chart_north.htmlcontent)
+comparechart_north_percent = discreteBarChart(name='North', height=400, width=800)#----สร้างกราฟแท่งภาคเหนือ
+comparechart_north_percent.add_serie(y=north, x=year)#---ใส่ค่า
+comparechart_north_percent.buildhtml()
+north_percent = open("comparechart_north.html", "w")
+north_percent.write(comparechart_north.htmlcontent)
 north_percent.close()
 
 #ภาคตะวันออกเฉียงเหนือ
-chart_north_east_percent = discreteBarChart(name='North_east', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
-chart_north_east_percent.add_serie(y=north_east, x=year)#---ใส่ค่า
-chart_north_east_percent.buildhtml()
-north_east_percent = open("chart_north_east.html", "w")
-north_east_percent.write(chart_north_east.htmlcontent)
+comparechart_north_east_percent = discreteBarChart(name='North_east', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออกเฉียงเหนือ
+comparechart_north_east_percent.add_serie(y=north_east, x=year)#---ใส่ค่า
+comparechart_north_east_percent.buildhtml()
+north_east_percent = open("comparechart_north_east.html", "w")
+north_east_percent.write(comparechart_north_east.htmlcontent)
 north_east_percent.close()
 
 #ภาคตะวันออก
-chart_east_percent = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออก
-chart_east_percent.add_serie(y=east, x=year)#---ใส่ค่า
-chart_east_percent.buildhtml()
-east_percent = open("chart_east.html", "w")
-east_percent.write(chart_east.htmlcontent)
+comparechart_east_percent = discreteBarChart(name='East', height=400, width=800)#----สร้างกราฟวงกลมภาคตะวันออก
+comparechart_east_percent.add_serie(y=east, x=year)#---ใส่ค่า
+comparechart_east_percent.buildhtml()
+east_percent = open("comparechart_east.html", "w")
+east_percent.write(comparechart_east.htmlcontent)
 east_percent.close()
 
 #ภาคกลาง
-chart_central_percent = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟวงกลมภาคเหนือ
-chart_central_percent.add_serie(y=central, x=year)#---ใส่ค่า
-chart_central_percent.buildhtml()
-central_percent = open("chart_central.html", "w")
-central_percent.write(chart_central.htmlcontent)
+comparechart_central_percent = discreteBarChart(name='Central', height=400, width=800)#----สร้างกราฟวงกลมภาคเหนือ
+comparechart_central_percent.add_serie(y=central, x=year)#---ใส่ค่า
+comparechart_central_percent.buildhtml()
+central_percent = open("comparechart_central.html", "w")
+central_percent.write(comparechart_central.htmlcontent)
 central_percent.close()
 
 #ภาคใต้
-chart_south_percent = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟวงกลมภาคใต้
-chart_south_percent.add_serie(y=south, x=year)#---ใส่ค่า
-chart_south_percent.buildhtml()
-south_percent = open("chart_south.html", "w")
-south_percent.write(chart_south.htmlcontent)
+comparechart_south_percent = discreteBarChart(name='South', height=400, width=800)#----สร้างกราฟวงกลมภาคใต้
+comparechart_south_percent.add_serie(y=south, x=year)#---ใส่ค่า
+comparechart_south_percent.buildhtml()
+south_percent = open("comparechart_south.html", "w")
+south_percent.write(comparechart_south.htmlcontent)
 south_percent.close()
 
 
